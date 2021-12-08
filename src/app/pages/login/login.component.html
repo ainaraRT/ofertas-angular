@@ -1,0 +1,31 @@
+<div class="container divcenter">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="float: left">Login</h2>
+            <button type="submit" class="btn btn-secondary" type="button" (click)="this.goToHome()" style="float: right; margin-right: 20%;">Volver</button>
+        </div>
+        <hr>
+        <form [formGroup]="this.loginForm" (ngSubmit)="submitForm()">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="usuario" style="margin-bottom: 5px;">Usuario *</label>
+                    <input type="text" formControlName="username" class="form-control" style="margin-bottom: 5px;" id="usuario" [ngClass]="{'is-invalid': this.enviado && this.loginForm.controls.username.errors}" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" style="margin-bottom: 5px;">Contraseña *</label>
+                    <input type="password" formControlName="password" class="form-control" style="margin-bottom: 5px;" [ngClass]="{'is-invalid': this.enviado && this.loginForm.controls.password.errors}" id="password" required>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="check">
+                    <label class="form-check-label" for="check">Recuérdame</label>
+                </div>
+                <br>
+                <button [disabled]="isLoading" type="submit" class="btn btn-info">
+                    <span class="spinner-border spinner-border-sm mr-1" *ngIf="isLoading"></span>
+                    Entrar
+                </button>
+                <div *ngIf="errorMsg" class="alert alert-danger mt-3 mb-0">{{errorMsg}}</div>
+            </div>    
+        </form>
+    </div>
+</div>

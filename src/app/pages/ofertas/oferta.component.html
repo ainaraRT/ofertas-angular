@@ -1,0 +1,21 @@
+<div class="container divcenter">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="float: left">Listado de ofertas</h2>
+            <button type="submit" class="btn btn-secondary" type="button" (click)="this.goToNewOferta()" style="float: right; margin-right: 20%">Crear Oferta</button>
+            <button type="submit" class="btn btn-secondary" type="button" (click)="this.goToHome()" style="float: right; margin-right: -20%">Salir</button>
+        </div>
+        <hr>
+        <div class="col-md-12">
+            <h5 style="float: left; margin-left: 15px">Título</h5>
+            <h5 style="float: right; margin-right: 20%">Detalle</h5>
+        </div>
+        <hr>
+        <div class="col-md-12" *ngFor="let item of oferta">
+            {{ item.titulo }}
+            <button type="submit" class="btn btn-info" type="button" style="float: right; margin-right: 20%" (click)="this.goToDetalleOferta(item.id)">Ver</button>
+            <button type="submit" class="btn btn-danger" type="button" style="float: right; margin-right: -15%" (click)="onDelete(item.id)">Eliminar</button>
+            <hr>
+        </div>
+    </div>
+</div>

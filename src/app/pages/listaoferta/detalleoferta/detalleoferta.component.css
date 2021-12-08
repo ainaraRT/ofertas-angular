@@ -1,0 +1,11 @@
+.divcenter{
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.img {
+    width: 500px; 
+    height: 400px;
+    margin-left: 30%;
+}
